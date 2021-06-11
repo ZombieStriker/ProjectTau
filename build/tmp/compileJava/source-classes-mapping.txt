@@ -1,0 +1,8 @@
+net/minestom/converter/StandaloneConverter.java
+ net.minestom.converter.StandaloneConverter
+ net.minestom.converter.StandaloneConverter$ConvertGen
+com/projecttau/bootstrap/TestSaveCommand.java
+ com.projecttau.bootstrap.TestSaveCommand
+com/projecttau/bootstrap/Bootstrap.java
+ com.projecttau.bootstrap.Bootstrap
+ com.projecttau.bootstrap.Bootstrap$GeneratorDemo
