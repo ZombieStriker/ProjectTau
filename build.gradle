@@ -3,24 +3,27 @@ plugins {
     id "com.github.johnrengelman.shadow" version "6.1.0"
 }
 
-group 'com.projecttau'
-version 'ProjectTau'
+group = 'com.projecttau'
+version = 'ProjectTau'
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spongepowered.org/maven' }
-    maven { url 'https://repo.velocitypowered.com/snapshots/' }
-    maven { url 'https://libraries.minecraft.net' }
-    maven { url 'https://jitpack.io' }
+    maven { url = 'https://repo.spongepowered.org/maven' }
+    maven { url = 'https://repo.velocitypowered.com/snapshots/' }
+    maven { url = 'https://libraries.minecraft.net' }
+    maven { url = 'https://jitpack.io' }
 }
 
 sourceCompatibility = targetCompatibility = 16
 
 dependencies {
+    implementation 'com.github.Minestom:Minestom:-SNAPSHOT'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    implementation 'com.github.Minestom:Minestom:-SNAPSHOT'
 }
+
+jar.manifest.attributes 'Main-Class': 'com.projecttau.bootstrap.Bootstrap'
+
 
 test {
     useJUnitPlatform()
