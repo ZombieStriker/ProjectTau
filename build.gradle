@@ -17,7 +17,9 @@ repositories {
 sourceCompatibility = targetCompatibility = 16
 
 dependencies {
-    implementation 'com.github.Minestom:Minestom:-SNAPSHOT'
+    implementation ('com.github.Minestom:Minestom:fix-data-SNAPSHOT') {
+        exclude module: 'minestom-data-customizable'
+    }
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
