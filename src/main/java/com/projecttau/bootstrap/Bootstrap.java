@@ -1,14 +1,22 @@
 package com.projecttau.bootstrap;
 
+import net.kyori.adventure.text.Component;
 import net.minestom.converter.StandaloneConverter;
 import net.minestom.server.MinecraftServer;
+import net.minestom.server.color.Color;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerCommandEvent;
 import net.minestom.server.event.player.PlayerLoginEvent;
+import net.minestom.server.event.player.PlayerUseItemEvent;
 import net.minestom.server.instance.*;
 import net.minestom.server.instance.batch.ChunkBatch;
 import net.minestom.server.instance.block.Block;
+import net.minestom.server.inventory.Inventory;
+import net.minestom.server.inventory.InventoryType;
+import net.minestom.server.item.ItemStack;
+import net.minestom.server.item.ItemStackBuilder;
+import net.minestom.server.item.Material;
 import net.minestom.server.storage.StorageLocation;
 import net.minestom.server.storage.StorageOptions;
 import net.minestom.server.storage.systems.FileStorageSystem;
@@ -42,10 +50,17 @@ public class Bootstrap {
             final Player player = event.getPlayer();
             event.setSpawningInstance(instanceContainer);
             player.setRespawnPoint(new Position(0, 3, 0));
+            player.getInventory().addItemStack(ItemStack.of(Material.COMPASS).withDisplayName(Component.text(new Color(255,20,255)+"Branch Selector")));
         });
 
         minecraftServer.getCommandManager().register(new TestSaveCommand());
 
+        GUIManager.init();
+
+        globalEventHandler.addEventCallback(PlayerUseItemEvent.class, event -> {
+            final Player player = event.getPlayer();
+            player.openInventory(GUIManager.getMainGUI());
+        });
         minecraftServer.start("0.0.0.0", 25565);
 
     }
