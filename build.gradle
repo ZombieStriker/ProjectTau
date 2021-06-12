@@ -12,15 +12,13 @@ repositories {
     maven { url = 'https://repo.velocitypowered.com/snapshots/' }
     maven { url = 'https://libraries.minecraft.net' }
     maven { url = 'https://jitpack.io' }
-    maven { url 'https://repo.minestom.net/repository/maven-public/' }
+    maven { url = 'https://repo.minestom.net/repository/maven-public/' }
 }
 
 sourceCompatibility = targetCompatibility = 15
 
 dependencies {
-    implementation ('com.github.Minestom:Minestom:-SNAPSHOT') {
-        exclude module: 'minestom-data-customizable'
-    }
+    implementation 'com.github.Minestom:Minestom:-SNAPSHOT'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }

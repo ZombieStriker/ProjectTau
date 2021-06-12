@@ -1,5 +1,6 @@
-package com.projecttau.bootstrap;
+package com.projecttau;
 
+import com.projecttau.bootstrap.Bootstrap;
 import net.minestom.server.command.builder.Command;
 
 public class TestSaveCommand extends Command {

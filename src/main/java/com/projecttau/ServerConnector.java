@@ -1,4 +1,4 @@
-package com.projecttau.bootstrap;
+package com.projecttau;
 
 import net.minestom.server.entity.Player;
 import net.minestom.server.network.packet.server.play.PluginMessagePacket;

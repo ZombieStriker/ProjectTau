@@ -16,6 +16,7 @@ import net.querz.mca.MCAFile;
 import net.querz.mca.MCAUtil;
 import net.querz.nbt.tag.CompoundTag;
 import net.querz.nbt.tag.Tag;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -33,7 +34,7 @@ public class StandaloneConverter {
     public void run(String[] args) throws Exception {
         baseDir = new File("regions");
         if (baseDir.isDirectory()) {
-            for (final File file : baseDir.listFiles()) {
+            for (final File file : Objects.requireNonNull(baseDir.listFiles())) {
                 if (file.length() > 0 &&
                         file.getName().startsWith("r.") && file.getName().endsWith(".mca")) {
                     mcaFiles.put(file.getName(), MCAUtil.read(file));
@@ -91,7 +92,7 @@ public class StandaloneConverter {
         BiomeManager bm = MinecraftServer.getBiomeManager();
 
         @Override
-        public void generateChunkData(ChunkBatch batch, int chunkX, int chunkZ) {
+        public void generateChunkData(@NotNull ChunkBatch batch, int chunkX, int chunkZ) {
             MCAFile mcaFile = mcaFiles.get(MCAUtil.createNameFromChunkLocation(chunkX, chunkZ));
             if (mcaFile != null) {
                 net.querz.mca.Chunk chunk = mcaFile.getChunk(chunkX, chunkZ);
@@ -99,7 +100,7 @@ public class StandaloneConverter {
                     System.out.println("Copying Chunk: " + chunkX + ", " + chunkZ);
                     for (int x = 0; x < Chunk.CHUNK_SIZE_X; x++)
                         for (int z = 0; z < Chunk.CHUNK_SIZE_Z; z++) {
-                            for (int y = 0; y < Chunk.CHUNK_SIZE_Y; y++) {
+                            for (int y = 0; y < 256; y++) {
                                 try {
                                     CompoundTag blockState = chunk.getBlockStateAt(x, y, z);
                                     if (blockState == null) {
