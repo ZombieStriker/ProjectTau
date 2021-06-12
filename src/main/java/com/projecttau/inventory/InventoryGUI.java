@@ -51,6 +51,7 @@ public abstract class InventoryGUI {
                     button.onClick().forEach(it -> it.accept(player, slot, clickType, result));
             });
         });
+        globalActions.forEach(inventory::addInventoryCondition);
         return inventory;
     }
 
