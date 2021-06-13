@@ -1,4 +1,4 @@
-package com.projecttau.inventory;
+package com.projecttau.defaults.inventory;
 
 import com.google.common.base.Preconditions;
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;

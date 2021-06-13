@@ -1,12 +1,47 @@
 net/minestom/converter/StandaloneConverter.java
  net.minestom.converter.StandaloneConverter
  net.minestom.converter.StandaloneConverter$ConvertGen
-com/projecttau/bootstrap/ServerConnector.java
- com.projecttau.bootstrap.ServerConnector
-com/projecttau/bootstrap/TestSaveCommand.java
- com.projecttau.bootstrap.TestSaveCommand
-com/projecttau/bootstrap/GUIManager.java
- com.projecttau.bootstrap.GUIManager
+com/projecttau/hub/AnarchyGUI.java
+ com.projecttau.hub.AnarchyGUI
+com/projecttau/hub/CreativeGUI.java
+ com.projecttau.hub.CreativeGUI
+com/projecttau/defaults/commands/GiveCommand.java
+ com.projecttau.defaults.commands.GiveCommand
+com/projecttau/defaults/commands/CommandManager.java
+ com.projecttau.defaults.commands.CommandManager
+com/projecttau/defaults/functions/ApplySkinFunction.java
+ com.projecttau.defaults.functions.ApplySkinFunction
+com/projecttau/hub/SmpGUI.java
+ com.projecttau.hub.SmpGUI
+com/projecttau/hub/SQLHandler.java
+ com.projecttau.hub.SQLHandler
+com/projecttau/defaults/inventory/InventoryGUI.java
+ com.projecttau.defaults.inventory.InventoryGUI
+com/projecttau/defaults/functions/FunctionManager.java
+ com.projecttau.defaults.functions.FunctionManager
+com/projecttau/hub/CivilizationGUI.java
+ com.projecttau.hub.CivilizationGUI
+com/projecttau/defaults/functions/DebugStick.java
+ com.projecttau.defaults.functions.DebugStick
+com/projecttau/defaults/commands/GamemodeCommand.java
+ com.projecttau.defaults.commands.GamemodeCommand
+com/projecttau/defaults/commands/OpCommand.java
+ com.projecttau.defaults.commands.OpCommand
+com/projecttau/hub/MinigameGUI.java
+ com.projecttau.hub.MinigameGUI
+com/projecttau/hub/PVPGUI.java
+ com.projecttau.hub.PVPGUI
+com/projecttau/defaults/commands/SaveWorldCommand.java
+ com.projecttau.defaults.commands.SaveWorldCommand
+com/projecttau/hub/RolePlayingGUI.java
+ com.projecttau.hub.RolePlayingGUI
+com/projecttau/defaults/inventory/Button.java
+ com.projecttau.defaults.inventory.Button
+ com.projecttau.defaults.inventory.Button$Builder
+com/projecttau/hub/ServersGUI.java
+ com.projecttau.hub.ServersGUI
+com/projecttau/hub/ServerConnector.java
+ com.projecttau.hub.ServerConnector
 com/projecttau/bootstrap/Bootstrap.java
  com.projecttau.bootstrap.Bootstrap
  com.projecttau.bootstrap.Bootstrap$GeneratorDemo

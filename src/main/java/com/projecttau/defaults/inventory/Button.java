@@ -1,8 +1,8 @@
-package com.projecttau.inventory;
+package com.projecttau.defaults.inventory;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.projecttau.ServerConnector;
+import com.projecttau.hub.ServerConnector;
 import net.minestom.server.inventory.Inventory;
 import net.minestom.server.inventory.condition.InventoryCondition;
 import net.minestom.server.item.ItemStack;

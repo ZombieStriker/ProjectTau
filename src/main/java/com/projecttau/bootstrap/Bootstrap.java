@@ -1,14 +1,19 @@
 package com.projecttau.bootstrap;
 
-import com.projecttau.ServersGUI;
-import com.projecttau.TestSaveCommand;
+import com.projecttau.defaults.commands.CommandManager;
+import com.projecttau.defaults.functions.FunctionManager;
+import com.projecttau.hub.ServersGUI;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.color.Color;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.event.player.PlayerUseItemEvent;
+import net.minestom.server.extras.MojangAuth;
+import net.minestom.server.extras.optifine.OptifineSupport;
+import net.minestom.server.extras.velocity.VelocityProxy;
 import net.minestom.server.instance.*;
 import net.minestom.server.instance.batch.ChunkBatch;
 import net.minestom.server.instance.block.Block;
@@ -45,15 +50,22 @@ public class Bootstrap {
             final Player player = event.getPlayer();
             event.setSpawningInstance(instanceContainer);
             player.setRespawnPoint(new Position(0, 3, 0));
-            player.getInventory().addItemStack(ItemStack.of(Material.COMPASS).withDisplayName(Component.text(new Color(255, 20, 255) + "Branch Selector")));
+            player.getInventory().addItemStack(ItemStack.of(Material.COMPASS).withDisplayName(Component.text( "Branch Selector").color(TextColor.color(255, 57, 28))));
         });
 
-        MinecraftServer.getCommandManager().register(new TestSaveCommand());
+        CommandManager.init();
+        FunctionManager.init(globalEventHandler);
 
         globalEventHandler.addEventCallback(PlayerUseItemEvent.class, event -> {
             final Player player = event.getPlayer();
             ServersGUI.open(player);
         });
+
+
+        OptifineSupport.enable();
+
+        VelocityProxy.enable("hfRCTwEyVNSJ");
+
         minecraftServer.start("0.0.0.0", 25565);
 
     }

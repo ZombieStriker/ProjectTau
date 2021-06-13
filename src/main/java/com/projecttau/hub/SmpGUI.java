@@ -1,7 +1,7 @@
-package com.projecttau;
+package com.projecttau.hub;
 
-import com.projecttau.inventory.Button;
-import com.projecttau.inventory.InventoryGUI;
+import com.projecttau.defaults.inventory.Button;
+import com.projecttau.defaults.inventory.InventoryGUI;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.minestom.server.item.ItemStack;
